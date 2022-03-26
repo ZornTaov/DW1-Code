@@ -19,7 +19,7 @@ void 0x00059CF0(entityPtr = r4, enemyPtr = r5, combatPtr = r6, combatId = r7) {
   else if(moveRange == 2 || moveRange == 3) {
     moveId = load(combatPtr + 0x38) - 0x2E
     entityType = load(entityPtr)
-    techId = load(0x12CEB4 + entityType * 52 + moveId)
+    techId = load(0x12CEB4 + entityType * 52 + moveId + 0x23)
     
     0x0005A37C(entityPtr, enemyPtr, combatPtr, techId)
   }
