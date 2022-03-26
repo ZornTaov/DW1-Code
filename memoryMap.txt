@@ -2,264 +2,264 @@
 0x00056CA8    combatInit()
 0x0005736C    combatInitEntityPositions()
 
-0x00057920    checkCombatEndCondition() -> isFinished = r2
+0x00057920    checkCombatEndCondition() -> isFinished = v0
 
 0x00057BD0    partnerAiTick()
 0x00058394    enemyAiTick()
 
-0x00059078    resetFlatten(combatId = r4)
+0x00059078    resetFlatten(combatId = a0)
 
 0x00059508    0x00059508(entityPtr, enemyPtr, combatId) // handle attack if not about to get countered?
 
-0x0005A9F8    0x0005A9F8(combatId = r4) // handle attack?
+0x0005A9F8    0x0005A9F8(combatId = a0) // handle attack?
 
-0x0005AF44    increaseSpeedBuffer(combatData = r4, statsData = r5)
-0x0005AFD8    handleDeath(entityPtr = r4, combatPtr = r5, combatId = r6)
-0x0005B070    hasAffordableMoves(arrayPtr = r4, combatId = r5) -> numAffordableMoves = r2
+0x0005AF44    increaseSpeedBuffer(combatData = a0, statsData = a1)
+0x0005AFD8    handleDeath(entityPtr = a0, combatPtr = a1, combatId = a2)
+0x0005B070    hasAffordableMoves(arrayPtr = a0, combatId = a1) -> numAffordableMoves = v0
 
 0x0005B1AC    deferred call -> getEntityTileFromModel(0x12F348, 0x134D58, 0x134D57)
 0x0005B1C0    0x0005B1C0()
 
-0x0005B254    clearBlockingData(combatPtr = r4)
+0x0005B254    clearBlockingData(combatPtr = a0)
 
-0x0005BBE4    getChanceToHit(attackerPtr = r4, victimPtr = r5, victimCombatPtr = r6, moveId = r7) -> chanceToHit = r2
+0x0005BBE4    getChanceToHit(attackerPtr = a0, victimPtr = a1, victimCombatPtr = a2, moveId = a3) -> chanceToHit = v0
 
-0x0005D374    getMPCost(entityPtr = r4, combatPtr = r5, moveSlot = r6) -> mpCost = r2 // 0 if invalid
-0x0005D608    distanceSquared(entityPtr1 = r4, entityPtr2 = r5) -> distance = r2
-0x0005D658    setMoveAnim(entityPtr = r4, combatPtr = r5, unused = r6, attackId = r7)  
-0x0005D6E0    setChargeupFlag(entityPtr = r4, combatPtr = r5, techId = r6)
+0x0005D374    getMPCost(entityPtr = a0, combatPtr = a1, moveSlot = a2) -> mpCost = v0 // 0 if invalid
+0x0005D608    distanceSquared(entityPtr1 = a0, entityPtr2 = a1) -> distance = v0
+0x0005D658    setMoveAnim(entityPtr = a0, combatPtr = a1, unused = a2, attackId = a3)  
+0x0005D6E0    setChargeupFlag(entityPtr = a0, combatPtr = a1, techId = a2)
 
-0x0005D990    0x0005D990(entityData = r4, combatData = r5) -> result = r2
+0x0005D990    0x0005D990(entityData = a0, combatData = a1) -> result = v0
 
 0x0005DEC4    battleTickFrame()
 
-0x0005DFC8    addFinisherValue(combatData = r4, amount = r5) // addToFinisher
+0x0005DFC8    addFinisherValue(combatData = a0, amount = a1) // addToFinisher
 
-0x0005E520    removeEffectSprite(entityPtr = r4, combatPtr = r5, effectType = r6)
+0x0005E520    removeEffectSprite(entityPtr = a0, combatPtr = a1, effectType = a2)
 
-0x0005EB0C    resetDumbCooldownTimers(combatData = r4)
+0x0005EB0C    resetDumbCooldownTimers(combatData = a0)
 
-0x0005EC7C    removeEffectSprites(entityPtr = r4, combatPtr = r5)
+0x0005EC7C    removeEffectSprites(entityPtr = a0, combatPtr = a1)
 
-0x0005EE58    hasAffordableMoves(arrayPtr = r4, combatId = r5) -> numAffordableMoves = r2
-0x0005EF3C    setCooldown(entityPtr = r4, combatPtr = r5)
-0x0005EF58    selectRandomMove(arrayPtr = r4) -> randomMove = r2
-0x0005EFCC    getStrongestMove(combatId = r4, moveArray = r5) -> strongestMove = r2
-0x0005F0C0    getBestTypeMove(combatId = r4, moveArray = r5) -> bestTypeMove = r2
+0x0005EE58    hasAffordableMoves(arrayPtr = a0, combatId = a1) -> numAffordableMoves = v0
+0x0005EF3C    setCooldown(entityPtr = a0, combatPtr = a1)
+0x0005EF58    selectRandomMove(arrayPtr = a0) -> randomMove = v0
+0x0005EFCC    getStrongestMove(combatId = a0, moveArray = a1) -> strongestMove = v0
+0x0005F0C0    getBestTypeMove(combatId = a0, moveArray = a1) -> bestTypeMove = v0
 
-0x0005F244    getCheapestMove(combatId = r4, moveArray = r5) -> cheapestMove = r2
-0x0005F344    getStrongestMoveArray(powerArray = r4, moveArray = r5, retPtr = r6, numMoves = r7)
-0x0005F404    getCheapestMoveArray(costArray = r4, moveArray = r5, retPtr = r6, numMoves = r7)
-0x0005F4C4    getNPCId(entityPtr = r4) -> npcId = r2
-0x0005F51C    getStatusedEnemies(entityPtr = r4) -> store(r5, enemyArray), store(r6, enemyCount)
-0x0005F61C    getWeakestEnemy(entityPtr = r4, combatPtr = r5) -> store(r5, lastScore), store(r6, bestEntity)
-0x0005F764    getWeaknessScore(entityPtr = r4, enemyPtr = r5) -> weaknessScore = r2
-0x0005F8E0    sortMoveArrayDescending(powerArray = r4, moveSlotArray = r5, rankingArray = r6, numMoves = r7)
-0x0005F9D8    sortMoveArrayAscending(powerArray = r4, moveSlotArray = r5, rankingArray = r6, numMoves = r7)
-0x0005FAD0    getTypeFactorPriority(attackerSpec, victimSpec) -> prioValue = r2
-0x0005FB54    getNumAliveNPCs() -> numEnemies = r2
-0x0005FBB4    fillRankingArray(powerArray = r4, rankingArray = r5, numMoves = r6)
-0x0005FC18    handleConfusion(entityPtr = r4, combatPtr = r5, combatId = r6)
-0x0005FCE8    getRemainingEnemies(entityPtr = r4) -> store(r5, enemyArray), store(r6, enemyCount)
+0x0005F244    getCheapestMove(combatId = a0, moveArray = a1) -> cheapestMove = v0
+0x0005F344    getStrongestMoveArray(powerArray = a0, moveArray = a1, retPtr = a2, numMoves = a3)
+0x0005F404    getCheapestMoveArray(costArray = a0, moveArray = a1, retPtr = a2, numMoves = a3)
+0x0005F4C4    getNPCId(entityPtr = a0) -> npcId = v0
+0x0005F51C    getStatusedEnemies(entityPtr = a0) -> store(a1, enemyArray), store(a2, enemyCount)
+0x0005F61C    getWeakestEnemy(entityPtr = a0, combatPtr = a1) -> store(a1, lastScore), store(a2, bestEntity)
+0x0005F764    getWeaknessScore(entityPtr = a0, enemyPtr = a1) -> weaknessScore = v0
+0x0005F8E0    sortMoveArrayDescending(powerArray = a0, moveSlotArray = a1, rankingArray = a2, numMoves = a3)
+0x0005F9D8    sortMoveArrayAscending(powerArray = a0, moveSlotArray = a1, rankingArray = a2, numMoves = a3)
+0x0005FAD0    getTypeFactorPriority(attackerSpec, victimSpec) -> prioValue = v0
+0x0005FB54    getNumAliveNPCs() -> numEnemies = v0
+0x0005FBB4    fillRankingArray(powerArray = a0, rankingArray = a1, numMoves = a2)
+0x0005FC18    handleConfusion(entityPtr = a0, combatPtr = a1, combatId = a2)
+0x0005FCE8    getRemainingEnemies(entityPtr = a0) -> store(a1, enemyArray), store(a2, enemyCount)
 
-0x0005FDB4    getMoveCommandAttack(combatId = r4, moveArray = r5) -> moveId = r2
-0x0005FE2C    getMoveCommandModerate(combatId = r4, moveArray = r5) -> moveId = r2
+0x0005FDB4    getMoveCommandAttack(combatId = a0, moveArray = a1) -> moveId = v0
+0x0005FE2C    getMoveCommandModerate(combatId = a0, moveArray = a1) -> moveId = v0
 
 0x0005FEA4    aiPickTarget(entityPtr, combatPtr, currentTarget, value)
 
-0x000601AC    hasZeroHP(combatId = r4)
-0x00060218    getClosestEnemy(entityPtr = r4, hostileMap = r5) -> closestEntity = r2
-0x00060324    enemySelectMove(entityPtr = r4, combatPtr = r5, combatId = r6)
-0x00060618    partnerYourCallSelectMove(entityPtr = r4, combatPtr = r5, combatId = r6)
+0x000601AC    hasZeroHP(combatId = a0)
+0x00060218    getClosestEnemy(entityPtr = a0, hostileMap = a1) -> closestEntity = v0
+0x00060324    enemySelectMove(entityPtr = a0, combatPtr = a1, combatId = a2)
+0x00060618    partnerYourCallSelectMove(entityPtr = a0, combatPtr = a1, combatId = a2)
 
 0x0006142C    setCommandBar()
 
 0x000623A0    0x000623A0()
 
-0x00062468    spawnDeathCountdown(entityPtr = r4)
+0x00062468    spawnDeathCountdown(entityPtr = a0)
 
 0x000630F8    0x000630F8()
 
 0x00063A20    deferred -> unsetObject(0x1A6, 0)
 0x00063A2C    deferred -> store(0x1350C0, 0) setObject(0x1A6, 0, 0, 0x63A48)
 
-0x00063EE4    deferred -> unsetObject(0x1A6, 0) r2 = load(0x1350C0)
-0x00063EF0    deferred -> r2 = load(0x1350C0)
+0x00063EE4    deferred -> unsetObject(0x1A6, 0) v0 = load(0x1350C0)
+0x00063EF0    deferred -> v0 = load(0x1350C0)
 
 0x00064550    0x00064550()
 
-0x0006F168    removePoisonSprite(instanceId = r4, entityPtr = r5)
+0x0006F168    removePoisonSprite(instanceId = a0, entityPtr = a1)
 
-0x0006F4DC    removeConfusionSprite(instanceId = r4, entityPtr = r5)
+0x0006F4DC    removeConfusionSprite(instanceId = a0, entityPtr = a1)
 
-0x0006FEE0    removeStunSprite(instanceId = r4, entityPtr = r5)
+0x0006FEE0    removeStunSprite(instanceId = a0, entityPtr = a1)
 
-0x00070BFC    0x00070BFC(id = r4) // unsets an 0x80D object
+0x00070BFC    0x00070BFC(id = a0) // unsets an 0x80D object
 
-0x00071098    fireFlattenProjectile(entityPtr = r4) -> instanceId = r2
+0x00071098    fireFlattenProjectile(entityPtr = a0) -> instanceId = v0
 
 == KAR_REL.BIN ==
-0x00053878    curlingInit(isTutorial = r4)
+0x00053878    curlingInit(isTutorial = a0)
 
 == TRN_REL.BIN ==
-0x000897F8    handleBrainsTraining(digimonType = r4, mode = r5, multiplier = r6)
-0x00089E08    getTrainingFactor(digimonType = r4, stationType = r5, mode = r6) -> trainingFactor = r2
+0x000897F8    handleBrainsTraining(digimonType = a0, mode = a1, multiplier = a2)
+0x00089E08    getTrainingFactor(digimonType = a0, stationType = a1, mode = a2) -> trainingFactor = v0
 
-0x0008A284    handleTrainingTimeSkip(tiredness = r4, energyCost = r5, happinessCost = r6)
+0x0008A284    handleTrainingTimeSkip(tiredness = a0, energyCost = a1, happinessCost = a2)
 
-0x0008A744    handleBrainMoveLearnChance(digimonType = r4) -> success = r2
+0x0008A744    handleBrainMoveLearnChance(digimonType = a0) -> success = v0
 
 0x0008D4CC    storeTrainingStats()
 
 0x0008D594    renderTrainingResult()
 
-0x0008E824    doSlotsRigging(reelId = r4, dataOffset = r5)
+0x0008E824    doSlotsRigging(reelId = a0, dataOffset = a1)
 
 == SLUS ==
 0x00090800    FlushCache()
-0x00090810    GPU_cw(gp0cmd = r4)
+0x00090810    GPU_cw(gp0cmd = a0)
 0x00090820    _bu_init()
 0x00090830    CdRemove()
-0x00090848    DeliverEvent(class = r4, spec = r5)
-0x00090858    OpenEvent(class = r4, spec = r5, mode = r6, func = r7) -> eventDescriptor = r2
-0x00090868    CloseEvent(event = r4) -> r2 = 1
-0x00090878    WaitEvent(event = r4) -> isReady = r2
-0x00090888    TestEvent(event = r4) -> isReady = r2
-0x00090898    EnableEvent(event = r4) -> r2 = 1
-0x000908A8    DisableEvent(event = r4) -> r2 = 1
-0x000908B8    InitPad(buf1 = r4, size1 = r5, buf2 = r6, size2 = r7)
+0x00090848    DeliverEvent(class = a0, spec = a1)
+0x00090858    OpenEvent(class = a0, spec = a1, mode = a2, func = a3) -> eventDescriptor = v0
+0x00090868    CloseEvent(event = a0) -> v0 = 1
+0x00090878    WaitEvent(event = a0) -> isReady = v0
+0x00090888    TestEvent(event = a0) -> isReady = v0
+0x00090898    EnableEvent(event = a0) -> v0 = 1
+0x000908A8    DisableEvent(event = a0) -> v0 = 1
+0x000908B8    InitPad(buf1 = a0, size1 = a1, buf2 = a2, size2 = a3)
 0x000908C8    StartPad()
 0x000908D8    StopPad()
-0x000908E8    OutdatedPadInitAndStart(type = r4, button_dest = r5, unused = r6, unused = r7)
+0x000908E8    OutdatedPadInitAndStart(type = a0, button_dest = a1, unused = a2, unused = a3)
 0x000908F8    OutdatedPadGetButtons()
 0x00090908    ReturnFromException()
 0x00090918    SetDefaultExitFromException()
 0x00090928    SetCustomExitFromException()
 0x00090938    EnterCriticalSection()
 0x00090948    ExitCriticalSection()
-0x00090958    FileOpen(fileName = r4, accessMode = r5) -> fileHandle = r2
-0x00090968    FileSeek(fileHandle = r4, offset = r5, seekType = r6)
-0x00090978    FileRead(fileHandle = r4, dest = r5, length = r6) -> bytesRead = r2
-0x00090988    FileWrite(fileHandle = r4, src = r5, length = r6) -> bytesWritten = r2
-0x00090998    FileClose(fileHandle = r4) -> fileHandle = r2
-0x000909A8    FormatDevice(deviceName = r4) -> success = r2
-0x000909B8    firstfile(fileName = r4, dirEntry = r5) -> dirEntry = r2
-0x000909C8    nextfile(dirEntry = r4) -> direntry = r2
-0x000909D8    FileDelete(fileName = r4) -> success = r2
-0x000909E8    ChangeClearPad(val = r4)
-0x000909F8    SysEnqIntRP(priority = r4, struct = r5)
-0x00090A08    SysDeqIntRP(priority = r4, struct = r5)
-0x00090A18    ChangeClearRCnt(irq = r4, flag = r5)
+0x00090958    FileOpen(fileName = a0, accessMode = a1) -> fileHandle = v0
+0x00090968    FileSeek(fileHandle = a0, offset = a1, seekType = a2)
+0x00090978    FileRead(fileHandle = a0, dest = a1, length = a2) -> bytesRead = v0
+0x00090988    FileWrite(fileHandle = a0, src = a1, length = a2) -> bytesWritten = v0
+0x00090998    FileClose(fileHandle = a0) -> fileHandle = v0
+0x000909A8    FormatDevice(deviceName = a0) -> success = v0
+0x000909B8    firstfile(fileName = a0, dirEntry = a1) -> dirEntry = v0
+0x000909C8    nextfile(dirEntry = a0) -> direntry = v0
+0x000909D8    FileDelete(fileName = a0) -> success = v0
+0x000909E8    ChangeClearPad(val = a0)
+0x000909F8    SysEnqIntRP(priority = a0, struct = a1)
+0x00090A08    SysDeqIntRP(priority = a0, struct = a1)
+0x00090A18    ChangeClearRCnt(irq = a0, flag = a1)
 
-0x00091174    exit(exitcode = r4)
-0x00091184    std_out_puts(stringPtr = r4)
-0x0009119C    abs(val = r4) -> result = r2
-0x000911AC    SaveState(buf = r4) -> result = r2
-0x000911BC    RestoreState(buf = r4, param = r5) -> result = r2
-0x000911CC    strcat(dst = r4, src = r5) -> dst = r2
-0x000911DC    strcmp(str1 = r4, str2 = r5) -> result = r2
-0x000911EC    strncmp(str1 = r4, str2 = r5, maxlen = r6) -> result = r2
-0x000911FC    strcpy(dst = r4, src = r5) -> dst = r2
-0x0009120C    strncpy(dst = r4, src = r5, maxlen = r6) -> dst = r2
-0x0009121C    strlen(src = r4) -> length = r2
-0x0009122C    strrchr(src = r4, char = r5) -> address = r2
-0x0009123C    bzero(dst = r4, len = r5) -> dst = r2 // zeroes memory
-0x0009124C    memcpy(dest = r4, src = r5, length = r6)
-0x0009125C    memset(dest = r4, fillbyte = r5, length = r6)
-0x0009126C    memchr(src = r4, scanbyte = r5, len = r6) -> address = r2
-0x0009127C    rand() -> value = r2 // BIOS call
-0x0009128C    printf(txtPtr = r4, params = r5,r6,r7,stack)
+0x00091174    exit(exitcode = a0)
+0x00091184    std_out_puts(stringPtr = a0)
+0x0009119C    abs(val = a0) -> result = v0
+0x000911AC    SaveState(buf = a0) -> result = v0
+0x000911BC    RestoreState(buf = a0, param = a1) -> result = v0
+0x000911CC    strcat(dst = a0, src = a1) -> dst = v0
+0x000911DC    strcmp(str1 = a0, str2 = a1) -> result = v0
+0x000911EC    strncmp(str1 = a0, str2 = a1, maxlen = a2) -> result = v0
+0x000911FC    strcpy(dst = a0, src = a1) -> dst = v0
+0x0009120C    strncpy(dst = a0, src = a1, maxlen = a2) -> dst = v0
+0x0009121C    strlen(src = a0) -> length = v0
+0x0009122C    strrchr(src = a0, char = a1) -> address = v0
+0x0009123C    bzero(dst = a0, len = a1) -> dst = v0 // zeroes memory
+0x0009124C    memcpy(dest = a0, src = a1, length = a2)
+0x0009125C    memset(dest = a0, fillbyte = a1, length = a2)
+0x0009126C    memchr(src = a0, scanbyte = a1, len = a2) -> address = v0
+0x0009127C    rand() -> value = v0 // BIOS call
+0x0009128C    printf(txtPtr = a0, params = a1,a2,a3,stack)
 
-0x00091BE8    getPadButtons() -> buttonFlags = r2
-0x00091C10    vsyncWait(targetFrame = r4, timeout = r5)
-0x00091CA8    vsync(frameCount = r4) -> blankCount = r4 //either hblank or vblank
+0x00091BE8    getPadButtons() -> buttonFlags = v0
+0x00091C10    vsyncWait(targetFrame = a0, timeout = a1)
+0x00091CA8    vsync(frameCount = a0) -> blankCount = a0 //either hblank or vblank
 
-0x000923AC    proxySetDMAIRQHandler(stringPtr = r4, arrayPtr = r5) -> oldHandler = r2
+0x000923AC    proxySetDMAIRQHandler(stringPtr = a0, arrayPtr = a1) -> oldHandler = v0
 
-0x00092450    setIRQMask(newIRQMask = r4) -> oldIRQMask = r2
+0x00092450    setIRQMask(newIRQMask = a0) -> oldIRQMask = v0
 
-0x00092708    setDMAIRQHandler(dmaIrqId = r4, newHandler = r5) -> oldHandler = r2
+0x00092708    setDMAIRQHandler(dmaIrqId = a0, newHandler = a1) -> oldHandler = v0
 
-0x00092AD4    probSwapPointer(ptr1 = r4, ptr2 = r5)
+0x00092AD4    probSwapPointer(ptr1 = a0, ptr2 = a1)
 
-0x00092CBC    printRectDebugInfo(stringPtr = r4, arrayPtr = r5)
+0x00092CBC    printRectDebugInfo(stringPtr = a0, arrayPtr = a1)
 
-0x0009324C    gpuClearOTagR(otPtr = r4, otCount = r5) -> otCount = r2
+0x0009324C    gpuClearOTagR(otPtr = a0, otCount = a1) -> otCount = v0
 
-0x0009332C    fillRect(headerPtr = r4, color = r5) -> unused = r2
-0x0009355C    uploadTexture(headerPtr = r4, dataStartPtr = r5) -> hasFailed = r2
+0x0009332C    fillRect(headerPtr = a0, color = a1) -> unused = v0
+0x0009355C    uploadTexture(headerPtr = a0, dataStartPtr = a1) -> hasFailed = v0
 
-0x00093A90    gpuUploadCommandList(cmdPtr = r4)
-0x00093AD8    getGPUInfo(infoEnum = r4) -> value = r2
+0x00093A90    gpuUploadCommandList(cmdPtr = a0)
+0x00093AD8    getGPUInfo(infoEnum = a0) -> value = v0
 
-0x00093B2C    gpuLoadImage(gpuFunctionPtr = r4, headerPtr = r5, headerSize = r6, dataPtr = r7) -> queueSize = r2
-0x00093DDC    processImageQueue() -> queueNotEmpty = r2
+0x00093B2C    gpuLoadImage(gpuFunctionPtr = a0, headerPtr = a1, headerSize = a2, dataPtr = a3) -> queueSize = v0
+0x00093DDC    processImageQueue() -> queueNotEmpty = v0
 
-0x0009418C    gpuDrawSync(syncMode = r4) -> result = r2
+0x0009418C    gpuDrawSync(syncMode = a0) -> result = v0
 0x000942C8    setGPUTimeout()
 0x000942FC    checkGPUTimeout()
 
-0x00094718    SetDispMask(isDisplayed = r4)
-0x000947B0    drawSync(syncMode = r4) -> result = r2
+0x00094718    SetDispMask(isDisplayed = a0)
+0x000947B0    drawSync(syncMode = a0) -> result = v0
 0x00094818    clearImage(headerPtr, red, green, blue)
-0x000948A8    loadImage(headerPtr = r4, dataPtr = r5)
+0x000948A8    loadImage(headerPtr = a0, dataPtr = a1)
 
-0x00094A20    ClearOTagR(otPtr = r4, otCount = r5) -> otCount = r2
-0x00094ACC    DrawOTag(otPtr = r4)
-0x00094B3C    PutDrawEnv(drawEnvPtr = r4)
-0x00094BFC    PutDispEnv(dispEnvPtr = r4)
+0x00094A20    ClearOTagR(otPtr = a0, otCount = a1) -> otCount = v0
+0x00094ACC    DrawOTag(otPtr = a0)
+0x00094B3C    PutDrawEnv(drawEnvPtr = a0)
+0x00094BFC    PutDispEnv(dispEnvPtr = a0)
 
-0x000979C0    setupClearColor(red = r4, green = r5, blue = r6, ptr = r7)
-0x00097AF8    r2 = load(0x136E0C)
+0x000979C0    setupClearColor(red = a0, green = a1, blue = a2, ptr = a3)
+0x00097AF8    v0 = load(0x136E0C)
 0x00097B08    0x00097B08()
 0x00097C18    setupDrawEnv()
 0x00097C98    setupDispAndDrawEnv()
 
-0x00097D48    storeScreenOffset(posX = r4, posY = r5)
+0x00097D48    storeScreenOffset(posX = a0, posY = a1)
 
-0x00098808    deferred call -> drawOTag(load(r4 + 0x10))
+0x00098808    deferred call -> drawOTag(load(a0 + 0x10))
 
-0x00098C28    set0x136FE4(value = r4) // store(0x136FE4, value)
-0x00098C38    get0x136FE4() -> value = r2 // load(0x136FE4)
+0x00098C28    set0x136FE4(value = a0) // store(0x136FE4, value)
+0x00098C38    get0x136FE4() -> value = v0 // load(0x136FE4)
 
-0x00097DD8    setTransformationMatrix(matrixPtr = r4)
+0x00097DD8    setTransformationMatrix(matrixPtr = a0)
 
-0x00098838    initOrderingTable(val1 = r4, val2 = r5, otPtrPtr)
+0x00098838    initOrderingTable(val1 = a0, val2 = a1, otPtrPtr)
 
-0x0009AB10    rotateVectorByMatrix(matrixPtr = r4, vectorPtr = r5, resultPtr = r6) -> resultPtr = r2
+0x0009AB10    rotateVectorByMatrix(matrixPtr = a0, vectorPtr = a1, resultPtr = a2) -> resultPtr = v0
 
-0x0009B030    rotateVector(matrixPtr = r4, vectorPtr = r5, resultPtr = r6) -> resultPtr = r2
-0x0009B090    copy12toOffset20(dest = r4, src = r5) -> dest = r2
-0x0009B0C0    scaleMatrix(destMatrixPtr = r4, scaleVector = r5) -> matrixPtr = r2
+0x0009B030    rotateVector(matrixPtr = a0, vectorPtr = a1, resultPtr = a2) -> resultPtr = v0
+0x0009B090    copy12toOffset20(dest = a0, src = a1) -> dest = v0
+0x0009B0C0    scaleMatrix(destMatrixPtr = a0, scaleVector = a1) -> matrixPtr = v0
 
-0x0009B200    setGTERotationMatrix(matrixPtr = r4)
+0x0009B200    setGTERotationMatrix(matrixPtr = a0)
 
-0x0009B290    setGTETranslationVector(matrixPtr = r4)
+0x0009B290    setGTETranslationVector(matrixPtr = a0)
 
-0x0009B340    setGTEScreenOffset(offsetX = r4, offsetY = r5)
+0x0009B340    setGTEScreenOffset(offsetX = a0, offsetY = a1)
 
-0x0009B804    rotVecToRotMatrix(rotVec = r4, destMatrixPtr = r5) -> matrixPtr = r2
+0x0009B804    rotVecToRotMatrix(rotVec = a0, destMatrixPtr = a1) -> matrixPtr = v0
 
-0x000A14C0    setupEntityMatrix(entityId = r4)
-0x000A1540    setEntityPosition(entityId = r4, posX = r5, posY = r6, posZ = r7)
+0x000A14C0    setupEntityMatrix(entityId = a0)
+0x000A1540    setEntityPosition(entityId = a0, posX = a1, posY = a2, posZ = a3)
 
 0x000A1CD8    resetFlattenGlobal()
 
-0x000A254C    getDigimonModelComponent(digimonType = r4, entityType = r5) -> modelComponent = r2
-0x000A2660    getEntityType(entityPtr = r4) -> entityType = r2 // 0 - NPC, 2 - Player, 3 - Partner, -1 - none
+0x000A254C    getDigimonModelComponent(digimonType = a0, entityType = a1) -> modelComponent = v0
+0x000A2660    getEntityType(entityPtr = a0) -> entityType = v0 // 0 - NPC, 2 - Player, 3 - Partner, -1 - none
 
-0x000A2F64    setObject(objectId = r4, instanceId = r5, funcPtr1 = r6, funcPtr2 = r7) -> success = r2
-0x000A3008    unsetObject(objectId = r4, instanceId = r5) -> success = r2
+0x000A2F64    setObject(objectId = a0, instanceId = a1, funcPtr1 = a2, funcPtr2 = a3) -> success = v0
+0x000A3008    unsetObject(objectId = a0, instanceId = a1) -> success = v0
 0x000A30C8    tickObjects()
 0x000A315C    tickObjects2()
 
-0x000A36D4    random(upperLimit = r4) -> r2 //TODO
+0x000A36D4    random(upperLimit = a0) -> v0 //TODO
 
-0x000A37FC    atan(diffY = r4, diffX = r5) -> angle = r2
+0x000A37FC    atan(diffY = a0, diffX = a1) -> angle = v0
 
 0x000A3B20    0x000A3B20()
 
-0x000A4A08    setFoodTimer(digimonId = r4)
+0x000A4A08    setFoodTimer(digimonId = a0)
 
 0x000A568C    tickConditionBoundaries()
 0x000A5804    tickSleepMechanics()
@@ -272,282 +272,282 @@
 0x000A75DC    tickHungerMechanics()
 0x000A7960    handleConditionBubbles()
 
-0x000A8100    handlePoopWeightLoss(digimonType = r4)
+0x000A8100    handlePoopWeightLoss(digimonType = a0)
 
 0x000A856C    tickSicknessMechanics()
 0x000A8A3C    tickDeathCondition()
 
 0x000A8F38    tickPartner()
 
-0x000AA188    setMenuState(value = r4) //set 0x134C91 to r4, 0x134C92 to 0
+0x000AA188    setMenuState(value = a0) //set 0x134C91 to a0, 0x134C92 to 0
 
-0x000AC050    loadMenuState() -> r2   //loads 0x134C91 into r2
-0x000AC05C    deferred call -> startAnimation(0x15576C, r4)
-0x000AC06C    waitForEntityWalkTo(scriptId1 = r4, scriptId2 = r5, targetPosX = r6, targetPosZ = r7, val5 = load(sp + 0x10)) -> finished = r2
+0x000AC050    loadMenuState() -> v0   //loads 0x134C91 into v0
+0x000AC05C    deferred call -> startAnimation(0x15576C, a0)
+0x000AC06C    waitForEntityWalkTo(scriptId1 = a0, scriptId2 = a1, targetPosX = a2, targetPosZ = a3, val5 = load(sp + 0x10)) -> finished = v0
 
-0x000AC2F8    loadEntityDataFromScriptId(scriptIdPtr = r4) -> entityPtr = r2, store(scriptIdPtr, entityId)
+0x000AC2F8    loadEntityDataFromScriptId(scriptIdPtr = a0) -> entityPtr = v0, store(scriptIdPtr, entityId)
 
-0x000AC3C8    waitForEntityLookAtEntity(scriptId1 = r4, scriptId2 = r5) -> finished = r2
-0x000AC550    waitForEntitySetRotation(scriptId = r4, rotation = r5) -> finished = r2
-0x000AC58C    waitForEntityMoveTo(scriptId1 = r4, scriptId2 = r5, targetPosX = r6, targetPosZ = r7, duration = load(sp + 0x10), val6 = load(sp + 0x14)) -> finished = r2
-0x000AC860    waitForEntityMoveToAxis(scriptId = r4, targetValue = r5, axis = r6, duration = r7, withCamera = load(sp + 0x10)) -> finished = r2
+0x000AC3C8    waitForEntityLookAtEntity(scriptId1 = a0, scriptId2 = a1) -> finished = v0
+0x000AC550    waitForEntitySetRotation(scriptId = a0, rotation = a1) -> finished = v0
+0x000AC58C    waitForEntityMoveTo(scriptId1 = a0, scriptId2 = a1, targetPosX = a2, targetPosZ = a3, duration = load(sp + 0x10), val6 = load(sp + 0x14)) -> finished = v0
+0x000AC860    waitForEntityMoveToAxis(scriptId = a0, targetValue = a1, axis = a2, duration = a3, withCamera = load(sp + 0x10)) -> finished = v0
 
-0x000ACBF4    addTamerLevel(chance = r4, amount = r5)
+0x000ACBF4    addTamerLevel(chance = a0, amount = a1)
 
 // libcd functions, most not decompiled
-0x000B0010    CdControl(command = r4, paramPtr = r5, resultPtr = r6) -> success = r2
+0x000B0010    CdControl(command = a0, paramPtr = a1, resultPtr = a2) -> success = v0
 
-0x000B0450    CdIntToPos(val1 = r4, target = r5)
-0x000B0554    CdPosToInt(cdlloc = r4) -> sectorId = r2
+0x000B0450    CdIntToPos(val1 = a0, target = a1)
+0x000B0554    CdPosToInt(cdlloc = a0) -> sectorId = v0
 
-0x000B1D48    lib_CdListDirs() -> success = r2 // stored in 0x13A210
+0x000B1D48    lib_CdListDirs() -> success = v0 // stored in 0x13A210
 
-0x000B234C    lib_CdReadFromSector(sectorCount = r4, loc = r5, targetBuf = r6) -> success = r2
-0x000B23C0    CdSearchFile(filePtr = r4, filePath = r5)
+0x000B234C    lib_CdReadFromSector(sectorCount = a0, loc = a1, targetBuf = a2) -> success = v0
+0x000B23C0    CdSearchFile(filePtr = a0, filePath = a1)
 
-0x000B2BB4    CdRead(sectors = r4, targetPtr = r5, mode = r6) -> result = r2
-0x000B2CB4    CdReadSync(mode = r4, result = r5) -> remaining = r2
+0x000B2BB4    CdRead(sectors = a0, targetPtr = a1, mode = a2) -> result = v0
+0x000B2CB4    CdReadSync(mode = a0, result = a1) -> remaining = v0
 
 // libcd end
 
-0x000B56F4    waitForMoveObjectTo(id = r4, otherId = r5, duration = r6, targetX = r7, targetY = load(sp + 0x10) -> finished = r2
+0x000B56F4    waitForMoveObjectTo(id = a0, otherId = a1, duration = a2, targetX = a3, targetY = load(sp + 0x10) -> finished = v0
 
-0x000B5984    setObjectsVisible(objId = r4, numObjs = r5, visible = r6)
+0x000B5984    setObjectsVisible(objId = a0, numObjs = a1, visible = a2)
 
-0x000B6EDC    getRotationDifference(locationPtr1 = r4, locationPtr2 = r5) -> store(r6, targetAngle), store(r7, counterClockwiseDiff), store(load(sp + 0x10), clockwiseDiff)
-0x000B6FB0    rotateEntity(rotationPtr = r4, targetAngle = load(r5), cClockwiseDiff = load(r6), clockwiseDiff = load(r7), stepSize = load(sp + 0x10)) -> finishedRotating = r2
+0x000B6EDC    getRotationDifference(locationPtr1 = a0, locationPtr2 = a1) -> store(a2, targetAngle), store(a3, counterClockwiseDiff), store(load(sp + 0x10), clockwiseDiff)
+0x000B6FB0    rotateEntity(rotationPtr = a0, targetAngle = load(a1), cClockwiseDiff = load(a2), clockwiseDiff = load(a3), stepSize = load(sp + 0x10)) -> finishedRotating = v0
 
-0x000B7848    0x000B7848(val1 = r4, val2 = r5)
-0x000B78C4    scriptNPCStartAnimation(scriptId = r4, animationId = r5)
+0x000B7848    0x000B7848(val1 = a0, val2 = a1)
+0x000B78C4    scriptNPCStartAnimation(scriptId = a0, animationId = a1)
 
-0x000B797C    scriptInstrUnknown54(scriptId = r4)
+0x000B797C    scriptInstrUnknown54(scriptId = a0)
 
 
-0x000BA40C    deferred -> store(0x123ED6, r4)
+0x000BA40C    deferred -> store(0x123ED6, a0)
 
-0x000C0BBC    checkMapCollisionX(entityPtr = r4, useYMin = r5) -> isColliding = r2
-0x000C0D74    checkMapCollisionY(entityPtr = r4, useXMin = r5) -> isColliding = r2
+0x000C0BBC    checkMapCollisionX(entityPtr = a0, useYMin = a1) -> isColliding = v0
+0x000C0D74    checkMapCollisionY(entityPtr = a0, useXMin = a1) -> isColliding = v0
 
-0x000C0F28    getModelTile(modelPtr = r4) -> store(r5, tileX), store(r6, tileY)
+0x000C0F28    getModelTile(modelPtr = a0) -> store(a1, tileX), store(a2, tileY)
 
-0x000C1798    setZero36Offset18(dest = r4)
+0x000C1798    setZero36Offset18(dest = a0)
 
-0x000C19A4    setupModelMatrix(nodePtr = r4)
-0x000C1A04    startAnimation(entityPtr = r4, animId = r5)
+0x000C19A4    setupModelMatrix(nodePtr = a0)
+0x000C1A04    startAnimation(entityPtr = a0, animId = a1)
 
 0x000C2910    0x000C2910() // handle textbox entity?
 
-0x000C3860    handleEvoItems(itemId = r4)
-0x000C396C    handleFood(itemId = r4)
-0x000C44C0    handleChips(itemId = r4)
-0x000C4728    handleStatusItems(itemId = r4)
-0x000C4834    handleRestore(itemId = r4)
+0x000C3860    handleEvoItems(itemId = a0)
+0x000C396C    handleFood(itemId = a0)
+0x000C44C0    handleChips(itemId = a0)
+0x000C4728    handleStatusItems(itemId = a0)
+0x000C4834    handleRestore(itemId = a0)
 0x000C4950    handleDoubleFloppy()
-0x000C4A08    handleMPHealingItem(itemId = r4)
-0x000C4AC0    handleHPHealingItem(itemId = r4)
+0x000C4A08    handleMPHealingItem(itemId = a0)
+0x000C4AC0    handleHPHealingItem(itemId = a0)
 
-0x000C51E0    getItemCount(itemId = r4) -> r2 = itemCount
+0x000C51E0    getItemCount(itemId = a0) -> v0 = itemCount
 
-0x000C563C    healValue(valueAddress = r4, amount = r5, upperLimit = r6)
+0x000C563C    healValue(valueAddress = a0, amount = a1, upperLimit = a2)
 
 0x000C574C    handlePortaPotty()
-0x000C57D0    modifyLifetime(amount = r4)
-0x000C5804    addEnergy(amount = r4)
-0x000C586C    subtractTiredness(amount = r4)
-0x000C58A8    addHappiness(amount = r4)
-0x000C58EC    addDiscipline(amount = r4)
-0x000C5930    addWeight(amount = r4)
+0x000C57D0    modifyLifetime(amount = a0)
+0x000C5804    addEnergy(amount = a0)
+0x000C586C    subtractTiredness(amount = a0)
+0x000C58A8    addHappiness(amount = a0)
+0x000C58EC    addDiscipline(amount = a0)
+0x000C5930    addWeight(amount = a0)
 0x000C5994    decreasePoopLevel()
-0x000C59B0    setTrainingBoost(flag = r4, mod = r5, duration = r6)
-0x000C59E0    handleItemSickness(chance = r4)
+0x000C59B0    setTrainingBoost(flag = a0, mod = a1, duration = a2)
+0x000C59E0    handleItemSickness(chance = a0)
 
 // sound library, either libsnd or libspu (or both)
 0x000C5C04    0x000C5C04()
 0x000C5C34
 
-0x000C6134    getNextSPUVoice(unused = r4) -> voiceId = r2
-0x000C61D4    0x000C61D4(val1, val2, val3) -> bitMask = r2
+0x000C6134    getNextSPUVoice(unused = a0) -> voiceId = v0
+0x000C61D4    0x000C61D4(val1, val2, val3) -> bitMask = v0
 
 0x000C6374    playSound(val1, val2)
 
 0x000C6784    0x000C6784()
 
-0x000C8DA8    getSPUVoiceState(voiceMask = r4) -> voiceState = r2
+0x000C8DA8    getSPUVoiceState(voiceMask = a0) -> voiceState = v0
 
-0x000CEA04    0x000CEA04(voiceId, val2, val3, val4, val5, val6, val7, val8) -> voiceId = r2 // maybe SsUtKeyOnV
+0x000CEA04    0x000CEA04(voiceId, val2, val3, val4, val5, val6, val7, val8) -> voiceId = v0 // maybe SsUtKeyOnV
 
 0x000CF430    0x000CF430() // TODO something SPU related
 
-0x000D2A48    0x000D2A48(val2, val3) -> retValue = r2 // TODO, something SPU related
+0x000D2A48    0x000D2A48(val2, val3) -> retValue = v0 // TODO, something SPU related
 
 // libsnd/libspu end
 
-0x000D3078    isTileWithinScreenArea(tileX = r4, tileY = r5) -> isWithinScreenArea = r2
+0x000D3078    isTileWithinScreenArea(tileX = a0, tileY = a1) -> isWithinScreenArea = v0
 0x000D3174    pollStoredLocation()
-0x000D31AC    entityIsInEntity(entityPtr = r4, entityPtr2 = r5) -> isColliding = r2
+0x000D31AC    entityIsInEntity(entityPtr = a0, entityPtr2 = a1) -> isColliding = v0
 
-0x000D3648    entityCheckCombatArea(entityPtr = r4, oldLocationPtr = r5, width = r6, height = r7) -> hasMovedOutside = r2
+0x000D3648    entityCheckCombatArea(entityPtr = a0, oldLocationPtr = a1, width = a2, height = a3) -> hasMovedOutside = v0
 
-0x000D3858    isRectInRect(rectArray = r4, xMin = r5, yMin = r6, xMax = r7, yMax = load(sp + 0x10)) -> isInRect = r2
-0x000D38D4    hasMovedOutsideCombatArea(screenPosOld = r4, screenPosOld = r5, width = r6, height = r7) -> hasMovedOutside = r2
+0x000D3858    isRectInRect(rectArray = a0, xMin = a1, yMin = a2, xMax = a3, yMax = load(sp + 0x10)) -> isInRect = v0
+0x000D38D4    hasMovedOutsideCombatArea(screenPosOld = a0, screenPosOld = a1, width = a2, height = a3) -> hasMovedOutside = v0
 
 0x000D39F8    clearPreviousLocations()
 
 0x000D3ADC    clearWaypointCounter()
-0x000D3AEC    getEntityTileFromModel(entityPtr = r4) -> store(r5, tileX), store(r6, tileY)
-0x000D3B44    isFiveTileWidePathOpen(tileX1, tileY1, tileX2, tileY2) -> isPathOpen = r2
-0x000D3C70    isLinearPathBlocked(tileX1, tileY1, tileX2, tileY2) -> isBlocked = r2
+0x000D3AEC    getEntityTileFromModel(entityPtr = a0) -> store(a1, tileX), store(a2, tileY)
+0x000D3B44    isFiveTileWidePathOpen(tileX1, tileY1, tileX2, tileY2) -> isPathOpen = v0
+0x000D3C70    isLinearPathBlocked(tileX1, tileY1, tileX2, tileY2) -> isBlocked = v0
 
-0x000D4564    storePreviousLocation(offset = r4, tileX = r5, tileY = r6)
-0x000D459C    entityLookAtLocation(entityPtr = r4, posPointer2 = r5)
-0x000D45EC    entityCheckCollision(noCollideEntityPtr = r4, checkedEntityPtr = r5, width = r6, height = r7) -> responseCode = r2
+0x000D4564    storePreviousLocation(offset = a0, tileX = a1, tileY = a2)
+0x000D459C    entityLookAtLocation(entityPtr = a0, posPointer2 = a1)
+0x000D45EC    entityCheckCollision(noCollideEntityPtr = a0, checkedEntityPtr = a1, width = a2, height = a3) -> responseCode = v0
 
-0x000D4F10    entityMoveForward(entityPtr = r4)
-0x000D5018    checkMapCollision(entityPtr = r4, diffX = r5, diffY = r6) -> isColliding = r2
-0x000D50DC    entityCheckEntityCollision(entityPtr = r4, entityPtr2 = r5, diffX = r6, diffY = r7)
+0x000D4F10    entityMoveForward(entityPtr = a0)
+0x000D5018    checkMapCollision(entityPtr = a0, diffX = a1, diffY = a2) -> isColliding = v0
+0x000D50DC    entityCheckEntityCollision(entityPtr = a0, entityPtr2 = a1, diffX = a2, diffY = a3)
 
-0x000D5430    entityIsOffScreen(entityPtr = r4, width = r5, height = r6) -> isOffScreen = r2
-0x000D5608    isOffScreen(screenPos = r4, width = r5, height = r6) -> isOffScreen = r2
+0x000D5430    entityIsOffScreen(entityPtr = a0, width = a1, height = a2) -> isOffScreen = v0
+0x000D5608    isOffScreen(screenPos = a0, width = a1, height = a2) -> isOffScreen = v0
 
-0x000D7618    0x000D7618() -> r2 = r2 // 1 if 0x134D9C is >= 25
+0x000D7618    0x000D7618() -> v0 = v0 // 1 if 0x134D9C is >= 25
 
-0x000D8780    storeEntityLocation(scriptId = r4, targetPtr = r5)
+0x000D8780    storeEntityLocation(scriptId = a0, targetPtr = a1)
 0x000D8860    spawnCameraMovement(instanceId)
-0x000D88CC    waitForMoveCameraTo(posX = r4, posZ = r5, speed = r6) -> isFinished = r2
+0x000D88CC    waitForMoveCameraTo(posX = a0, posZ = a1, speed = a2) -> isFinished = v0
 
-0x000D9A3C    getOriginalType(digimonType) -> originalType = r2
+0x000D9A3C    getOriginalType(digimonType) -> originalType = v0
 
 0x000DAC48    renderInventoryText()
-0x000DAD04    renderInventoryTextLine(lineId = r4) -> result = r2
+0x000DAD04    renderInventoryTextLine(lineId = a0) -> result = v0
 
-0x000DD780    updateMinuteHand(hour = r4, minute = r5)
+0x000DD780    updateMinuteHand(hour = a0, minute = a1)
 
 0x000DF2D0    setConditionAnimation()
 0x000DF42C    setIdleAnimation()
-0x000DF4D0    setDigimonState(value = r4) //set 0x134C5B to r4, 0x134C5C to 0
+0x000DF4D0    setDigimonState(value = a0) //set 0x134C5B to a0, 0x134C5C to 0
 
-0x000DF5E4    deferred call -> startAnimation(0x1557A8, r4)
+0x000DF5E4    deferred call -> startAnimation(0x1557A8, a0)
 
-0x000E1C7C    waitForRotate3DObject(scriptId = r4, speed = r5) -> finished = r2
+0x000E1C7C    waitForRotate3DObject(scriptId = a0, speed = a1) -> finished = v0
 
-0x000E2544    getFreshEvolutionTarget(digimonType = r4) -> targetType = r2
-0x000E2598    getInTrainingEvolutionTarget(digimonType = r4) -> targetType = r2
-0x000E26B8    calculateRequirementScore(digimonType = r4, targetType = r5, isMaxCM = r6, isMaxBattles = r7, bestDigimon = load(sp + 0x10) -> requirementScore = r2
-0x000E2BB4    getRookieEvolutionTarget(digimonType = r4) -> targetType = r2
-0x000E2F08    getChampionEvolutionTarget(digimonType = r4) -> targetType = r2
-0x000E3234    handleSpecialEvolutions(mode = r4, entityPtr = r5) -> targetType = r2
-0x000E3510    getNumMasteredMoves() -> masteredMoves = r2
+0x000E2544    getFreshEvolutionTarget(digimonType = a0) -> targetType = v0
+0x000E2598    getInTrainingEvolutionTarget(digimonType = a0) -> targetType = v0
+0x000E26B8    calculateRequirementScore(digimonType = a0, targetType = a1, isMaxCM = a2, isMaxBattles = a3, bestDigimon = load(sp + 0x10) -> requirementScore = v0
+0x000E2BB4    getRookieEvolutionTarget(digimonType = a0) -> targetType = v0
+0x000E2F08    getChampionEvolutionTarget(digimonType = a0) -> targetType = v0
+0x000E3234    handleSpecialEvolutions(mode = a0, entityPtr = a1) -> targetType = v0
+0x000E3510    getNumMasteredMoves() -> masteredMoves = v0
 
-0x000E5290    swapByte(valPtr1 = r4, valPtr2 = r5)
-0x000E52C0    swapValues(valPtr1 = r4, valPtr2 = r5)
-0x000E52D8    getModelObjectScreenPos(entityPtr = r4, objectId = r5) -> store(r6, posX), store(r6 + 0x02, posY)
-
-
-0x000E5EB4    hasMove(moveId = r4) -> hasMove = r2
-0x000E5F14    learnMove(moveId = r4)
-0x000E6000    getTechFromMove(mapDataOffset = r4, move = r5) -> techId = r2
-0x000E6078    entityLookAtTile(playerPtr = r4, tileX = r5, tileY = r6)
-
-0x000E61AC    isInvisible(entityPtr = r4) -> result = r2
+0x000E5290    swapByte(valPtr1 = a0, valPtr2 = a1)
+0x000E52C0    swapValues(valPtr1 = a0, valPtr2 = a1)
+0x000E52D8    getModelObjectScreenPos(entityPtr = a0, objectId = a1) -> store(a2, posX), store(a2 + 0x02, posY)
 
 
-0x000E7484    isScreenConcave() -> isConcave = r2
+0x000E5EB4    hasMove(moveId = a0) -> hasMove = v0
+0x000E5F14    learnMove(moveId = a0)
+0x000E6000    getTechFromMove(mapDataOffset = a0, move = a1) -> techId = v0
+0x000E6078    entityLookAtTile(playerPtr = a0, tileX = a1, tileY = a2)
 
-0x000E7D40    handleBattleIdle(entityPtr = r4, statsPtr = r5, flags = r6)
-0x000E7D9C    0x000E7D9C(entityId = r4, symbolId = r5)
-
-0x000E847C    handleCombatStart(interactedEntity = r4) -> enemyCount = r2
-
-0x000E8970    startBattleIdleAnimation(entityPtr = r4, statsPtr = r5, flags = r6)
+0x000E61AC    isInvisible(entityPtr = a0) -> result = v0
 
 
-0x000E9D24    setButterfly(entityPtr = r4) -> instanceId = r2
+0x000E7484    isScreenConcave() -> isConcave = v0
 
-0x000E9FB4    unsetButterfly(instanceId = r4)
+0x000E7D40    handleBattleIdle(entityPtr = a0, statsPtr = a1, flags = a2)
+0x000E7D9C    0x000E7D9C(entityId = a0, symbolId = a1)
 
-0x000EC538    setBubble(bubbleType = r4, entityPtr = r4) -> instanceId = r2
+0x000E847C    handleCombatStart(interactedEntity = a0) -> enemyCount = v0
 
-0x000ECE20    unsetBubble(instanceId = r4)
+0x000E8970    startBattleIdleAnimation(entityPtr = a0, statsPtr = a1, flags = a2)
 
-0x000ECEE8    battleStatsGainsAndDrops(itemDropArray = r4)
+
+0x000E9D24    setButterfly(entityPtr = a0) -> instanceId = v0
+
+0x000E9FB4    unsetButterfly(instanceId = a0)
+
+0x000EC538    setBubble(bubbleType = a0, entityPtr = a0) -> instanceId = v0
+
+0x000ECE20    unsetBubble(instanceId = a0)
+
+0x000ECEE8    battleStatsGainsAndDrops(itemDropArray = a0)
 
 0x000EFA18    recalculatePPandArena()
 
-0x000F06F0    handleBuffDisks(itemId = r4)
+0x000F06F0    handleBuffDisks(itemId = a0)
 
-0x000F18A4    isAsciiEncoded(charPtr = r4) -> isAscii = r2
-0x000F18C8    convertAsciiToGameChar(asciiVal = r4) -> dw1Char = r2
+0x000F18A4    isAsciiEncoded(charPtr = a0) -> isAscii = v0
+0x000F18C8    convertAsciiToGameChar(asciiVal = a0) -> dw1Char = v0
 
-0x000F1AB0    swapBytes(val = r4) -> swappedVal = r2
+0x000F1AB0    swapBytes(val = a0) -> swappedVal = v0
 
-0x000FC054    isKeyDown(keyFlag = r4) -> isDown = r2
-0x000FC098    isXPressedAfterDialogue() -> isPressed = r2
+0x000FC054    isKeyDown(keyFlag = a0) -> isDown = v0
+0x000FC098    isXPressedAfterDialogue() -> isPressed = v0
 
-0x000FC2D0    allocateArray(size = r4) -> arrayPtr = r2
-0x000FC310    freeArray(arrayPtr = r4) 
+0x000FC2D0    allocateArray(size = a0) -> arrayPtr = v0
+0x000FC310    freeArray(arrayPtr = a0) 
 
 0x000FC374    dailyPStatTrigger()   //increases PStat 29-32 by 1, rerolls card shop cards
 
-0x000FF824    hasDigimonRaised(digimonId = r4) -> isRaised = r2 // deferred isTriggerCalled(512 + digimonId)
+0x000FF824    hasDigimonRaised(digimonId = a0) -> isRaised = v0 // deferred isTriggerCalled(512 + digimonId)
 
-0x000FFDF4    0x000FFDF4() -> bool = r2 // something textbox related
+0x000FFDF4    0x000FFDF4() -> bool = v0 // something textbox related
 
-0x00100E40    0x00100E40(val = r4) -> bool = r2 // checks if textbox is finished opening?
-0x00100F20    0x00100F20(val = r4) -> bool = r2 // advances to next textbox?
+0x00100E40    0x00100E40(val = a0) -> bool = v0 // checks if textbox is finished opening?
+0x00100F20    0x00100F20(val = a0) -> bool = v0 // advances to next textbox?
 
 0x0010020C    0x0010020C() // resets some values at 0x1BE810
 
 0x00101160    0x00101160() // textbox entity function?
 
-0x00102144    scriptIdToEntityId(scriptId = r4) -> entityId = r2
+0x00102144    scriptIdToEntityId(scriptId = a0) -> entityId = v0
 
-0x001026E8    loadFileSection(filePath = r4, target = r5, start = r6, size = r7)
+0x001026E8    loadFileSection(filePath = a0, target = a1, start = a2, size = a3)
 
-0x001035A8    scriptInstruction46to58(instructionId = r4)
-0x00103D70    scriptInstruction5Ato5F(instructionId = r4)
+0x001035A8    scriptInstruction46to58(instructionId = a0)
+0x00103D70    scriptInstruction5Ato5F(instructionId = a0)
 
 0x001053EC    0x001053EC()
 
-0x001054E4    scriptStartAnimation(scriptId = r4, animId = r5)
-0x00105558    handleMusicOverride() -> store(r4, trackId), store(r5, variationId)
-0x0010569C    waitForEntity(waitForId = r4)
+0x001054E4    scriptStartAnimation(scriptId = a0, animId = a1)
+0x00105558    handleMusicOverride() -> store(a0, trackId), store(a1, variationId)
+0x0010569C    waitForEntity(waitForId = a0)
 
-0x00105B14    callScriptSection(scriptId = r4, scriptSection = r5, value = r6)
+0x00105B14    callScriptSection(scriptId = a0, scriptSection = a1, value = a2)
 
-0x00106218    getScript(scriptId = r4) -> scriptPtr = r2
-0x0010629C    getScriptSection(scriptPtr = r4, sectionId = r5) -> scriptPtr = r2
+0x00106218    getScript(scriptId = a0) -> scriptPtr = v0
+0x0010629C    getScriptSection(scriptPtr = a0, sectionId = a1) -> scriptPtr = v0
 
-0x001062E0    readPStat(target = r4) -> r2
+0x001062E0    readPStat(target = a0) -> v0
 
-0x0010643C    isTriggerSet(triggerId = r4) -> isSet = r2
-0x00106474    writePStat(target = r4, value = r5)
+0x0010643C    isTriggerSet(triggerId = a0) -> isSet = v0
+0x00106474    writePStat(target = a0, value = a1)
 
 0x001064F0    0x001064F0()
 
 0x001064BC    0x001064BC(ptr)
 
-0x00106598    pollNextScriptByte() -> store(r4, byteValue)
-0x001065C0    setTrigger(triggerId = r4)
-0x001065FC    unsetTrigger(triggerId = r4)
+0x00106598    pollNextScriptByte() -> store(a0, byteValue)
+0x001065C0    setTrigger(triggerId = a0)
+0x001065FC    unsetTrigger(triggerId = a0)
 
-0x00106638    skipOnePollTwoScriptBytes() -> store(r4, byteValue1), store(r5, byteValue2)
+0x00106638    skipOnePollTwoScriptBytes() -> store(a0, byteValue1), store(a1, byteValue2)
 
-0x00106694    pollNextTwoScriptBytes() -> store(r4, byteValue1), store(r5, byteValue2)
+0x00106694    pollNextTwoScriptBytes() -> store(a0, byteValue1), store(a1, byteValue2)
 
-0x00106A30    pollNextScriptShort() -> store(r4, shortValue)
-0x00106A58    pollNextTwoScriptShorts() -> store(r4, shortValue1), store(r5, shortValue2)
-0x00106A80    playBGM(trackId = r4)
+0x00106A30    pollNextScriptShort() -> store(a0, shortValue)
+0x00106A58    pollNextTwoScriptShorts() -> store(a0, shortValue1), store(a1, shortValue2)
+0x00106A80    playBGM(trackId = a0)
 
-0x00106CA8    getTriggerOffsets(triggerId = r4) -> store(r5, triggerAddress), store(r6, triggerMask)
+0x00106CA8    getTriggerOffsets(triggerId = a0) -> store(a1, triggerAddress), store(a2, triggerMask)
 
-0x00106E0C    rollCardPack() -> cardId = r2
+0x00106E0C    rollCardPack() -> cardId = v0
 
 0x0010CB90    clearTextArea()
-0x0010CBC4    clearTextSubArea(array = r4)
+0x0010CBC4    clearTextSubArea(array = a0)
 
-0x0010CC0C    setTextColor(colorCode = r4)
-0x0010CC28    renderCharacter(charVal = r4, xPos = r5, yPos = r6) -> characterWidth = r2
-0x0010CF24    renderString(stringPtr = r4, xPos = r5, yPos = r6)
+0x0010CC0C    setTextColor(colorCode = a0)
+0x0010CC28    renderCharacter(charVal = a0, xPos = a1, yPos = a2) -> characterWidth = v0
+0x0010CF24    renderString(stringPtr = a0, xPos = a1, yPos = a2)
 
 
 // change player type

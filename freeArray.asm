@@ -9,9 +9,9 @@ void freeArray(int arrayPtr) {
   store(0x134F64, offset - (arraySize + 4)) 
 }
 
-0x000fc310 lw r3,-0x0004(r4)
-0x000fc314 lw r2,-0x6bc8(r28)
-0x000fc318 addiu r3,r3,0x0004
-0x000fc31c subu r2,r2,r3
-0x000fc320 jr r31
-0x000fc324 sw r2,-0x6bc8(r28)
+0x000fc310 lw v1,-0x0004(a0)
+0x000fc314 lw v0,-0x6bc8(gp)
+0x000fc318 addiu v1,v1,0x0004
+0x000fc31c subu v0,v0,v1
+0x000fc320 jr ra
+0x000fc324 sw v0,-0x6bc8(gp)
