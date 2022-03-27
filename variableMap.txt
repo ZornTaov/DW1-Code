@@ -1,0 +1,527 @@
+Variables
+
+
+Brain Training strings
+0x8F0D8 "Give it all you got!"
+0x8F0F0 "Take it easy!"
+0x8F100 "Get back!"
+0x8F10C "Change target!"
+0x8F11C "Hang in there!"
+0x8F12C "Technique mastered"
+0x8F140 "New orders!"
+0x8F19C "was mastered!"
+
+0x113XXX string pointers
+0x114XXX string pointers
+
+0x115AXX VSync data
+
+0x116AE4 IRQ?
+0x116AEC IRCMaskPtr
+
+0x116BXX GPU data
+0x116B30 frame counter
+
+0x116CXX GPU data
+0x116C3C target frame
+0x116C40 GPU timeout
+
+0x11FA1C atan lookup?
+
+0x122584 ??
+
+0x1225A0 "is sick!"
+
+0x1225C4 max energy, offset 28 for each digimonType
+0x1225C5 energy Threshold, offset 28 for each digimonType
+0x1225C6 energy usage, offset 28 for each digimonType
+0x1225C8 poop timer, offset 28 for each digimonType
+0x1225CC weightloss from pooping, offset 28 for each digimonType
+0x1225CD favorite food ID, offset 28 for each digimonType
+0x1225CE sleepCycle, offset 28 for each digimonType
+
+0x1225D0 training type, offset 28 for each digimonType
+0x1225D1 default weight, offset 28 for each digimonType
+
+0x122CF4 sleepy hour, offset 6 for each sleepCycle
+0x122CF5 sleepy minute, offset 6 for each sleepCycle
+0x122CF6 wakeup hour, offset 6 for each sleepCycle
+0x122CF7 wakeup minute, offset 6 for each sleepCycle
+
+0x124C0C ??, training string, offset ((i*2)+j)*12, range i 0~3, j 0~1
+0x124C54 ??, training string
+
+0x124D5A ??, offset for waypoint stuff
+
+0x125F64 ??, something for item sickness
+0x125F70 ??, type factor for attacking
+
+0x126054 move name pointer, offset by 4
+
+0x12623C power?, offset 16 by techId
+0x126240 move power?, offset 16 by techId
+0x126242 mp cost, offset 16 by techId
+0x126244 attack type, offset 16 by techId, 3 all range, 4 buff
+0x126245 attack spec? offset 16 by techId
+0x126247 accuracy, offset 16 by techId
+0x126249 ?? used with tech from move, offset 16 by tech from move
+
+0x1269DC item name, offset 0x20 by item id
+
+0x127C5C target digimon for evo item, offset by itemID - 71
+
+0x127EAC ?? something for audio
+
+0x128080 SPU Voice (voiceId) Register
+0x1280B0 channel active?
+
+0x1289F4 ?? something for rotation
+
+0x12A84C original type?
+
+0x12A9D8 "Use"  Inventory
+0x12A9E0 "Move" Inventory
+0x12A9E8 "Sort" Inventory
+0x12A9F0 "Drop" Inventory
+
+Digivolution Struct, starts at 0x12ABEC, offset 0x1C by evoTarget type
+	+0x00 Bonus Digimon requirement
+	+0x02 HP requirement
+	+0x04 MP requirement
+	+0x06 offense requirement
+	+0x08 defense requirement
+	+0x0A speed requirement
+	+0x0C brains requirement
+	+0x0E Care Mistakes
+	+0x10 Weight requirement
+	+0x12 Bonus Happiness requirement
+	+0x14 Bonus Discipline requirement
+	+0x16 Bonus Battles requirement
+	+0x18 Bonus Techs requirement
+	+0x1A requirement flags for digivolution
+	 0xX1 max CM for 0x1A
+	 0x1X max battles for 0x1A
+
+0x12B2DC hasDigimonRaised?, offset 14 by digimonType
+
+Evolution Path Struct
+0x12B66C Previous evolutions, offset by (target type - 1) * 11 + i, range i 0~4
+0x12B671 target evolutions, offset by (target type - 1) * 11 + i, range i 0~5
+
+0x12BB14 base chance to run from fight, offset own digimontype*3 + enemy type
+
+0x12BB20 is screen concave? range 0~17
+
+0x12CE44 bubble icon pointer, offset 4 by bubble type
+
+Digimon Info Struct, starts at 0x12CEB4, offset 0x34 by digimon type
+	+0x00 Digimon name, up to 0x14 long
+	+0x14 digimon node count, for animation?
+	+0x18 digimon diameter, little endian
+	+0x1A digimon height, little endian
+	+0x1C digimon level for intimidation? range 1-3
+	+0x1D digimon level, 0 seems invalid, 1 in-training, 2 rookie, 3 champion, 4 "ultimate"
+	+0x1E digimon element, range 0~6
+	+0x1F ??
+	+0x20 ??
+	+0x21 item id digimon drops
+	+0x22 chance digimon drops item
+	+0x23 attackId, moveindex offsets, range 16
+	+0x33 0
+
+0x12F344 player pointer, every 4 bytes is another entity in a battle
+0x12F348 partner ptr,
+0x12F34B enemy ptr, offset by 0x4, range 0~7
+
+0x12FFD9 card rarity, offset 4, range 0~65
+
+0x130388 points to "\SCN\DG.SCN"
+
+0x1307E0 ??
+0x13087C ??, render character stuff
+0x130880 ??, 
+0x130896 ??, 
+
+0x1325F0 empty string? used with file path
+
+0x13435C heal amount, offset 2 by item id
+0x134364 particle type for healing, offset by item id
+0x134368 ??, used with item sickness
+
+0x134398 x radius? offset 2 range 0~3
+0x134399 z radius? offset 2 range 0~3
+
+0x1344D0 enemy count factor for stat gains, offset by enemy count -1
+
+0x1345B0 array address
+
+0x13465C text color?
+0x13465D text color?
+
+0x1346E0 ??, battle command related
+0x1346EC ??, battle command related
+0x1346F0 ??, battle command related
+0x1346F4 ??, battle command related
+0x1346F8 ??, battle command related
+
+0x134878 next poop timer
+
+0x134A08 curling weight
+
+0x134BC0 ??, training string
+
+0x134C4C ?? for tick death condition
+0x134C54 ?"?, for butterfly checks, either 0 or -1
+0x134C5B digimon state, 1 evolution state?, 8 dying state, 10 training state, 12 ??, 13 evolution state?
+0x134C5C ??
+0x134C60 butterfly instanceID
+0x134C64 ??, something for Nanimon digivolution?
+0x134C6C bubble type
+0x134C70 bubble instanceID
+0x134C74 bubble frame count?
+0x134C78 ??, used with look at entity, has offsets
+0x134C80 wait for entity move to
+
+0x134C91 menu state?
+0x134C92 something for menu state?
+0x134C98 ?? xpos related for waitforentitymoveto
+0x134C9A ?? ypos related for waitforentitymoveto
+0x134C9C ?? script related, loaded into 0x134F9C
+
+0x134CA4 transformation lock hour, can be -1
+0x134CA8 transformation lock active,
+0x134CB8 ??, if 1, skip tickPartner
+
+0x134D20 ??, range 0~7
+
+0x134D4C combat head, LOTS of info around it
+
+0x134D50 waypoint stuff
+0x134D51 player look at tile Y
+0x134D52 player look at tile X
+0x134D53 waypoint stuff
+0x134D54 waypoint stuff
+0x134D57 tileY of given model
+0x134D58 tileX of given model
+0x134D59 waypoint stuff
+0x134D5A waypoint stuff
+0x134D5B tileY?
+0x134D5C tileX?
+
+0x134D60 ??, entity ptr of some sort
+0x134D64 ??, init to 0
+0x134D66 frame count, init to 1
+0x134D68 flee timer
+0x134D6A death countdown delay timer
+0x134D6C enemy count
+
+0x134D70 ??, init to 0
+0x134D74 no AI flag
+0x134D78 battle commands disabled
+0x134D7C is non-runnable fight?
+
+0x134D80 unknown timer
+0x134D88 screen Y
+0x134D8C screen X
+
+0x134D90 voice ID?
+0x134D94 ??
+0x134D98 ??
+0x134D9C ??
+0x134DA8 ??
+0x134DAC ??, toggles between 0 and -1
+
+0x134E20 is time running?
+0x134E2C plannedAnimation for partner
+
+0x134E30 ??, init to 1
+0x134E40 ??, some incrementer for rotate 3d object
+
+0x134E50 evolution target
+0x134E52 is item evo, no stat gains
+
+0x134E84 combat mode? 0 = normal, 1 = enemies defined ber pstat
+
+0x134EBC current hour,
+0x134EBE current minute?
+
+0x134EC0 xCenter? always offset by 160
+0x134EC4 yCenter? always offset by 120
+0x134ECC ?? something for battle tick frame
+0x134ED0 ?? ptr for battle tick frame
+
+0x134EE4 input state
+0x134EE8 previous input state
+
+0x134F02 current year
+0x134F04 current day
+0x134F06 last frame,
+0x134F08 current frame,
+0x134F0A some state, 0 default, 1 in combat, 2 unused?, 3 ??, 4 ??, 5 ??, less than 6
+
+0x134F54 ??
+
+0x134F64 array offset
+
+0x134F94 ??, textbox logic related
+0x134F9C ??
+
+0x134FA0 ??, either 0 or 1
+0x134FA4
+0x134FA8 ??, used for loading files
+0x134FAC entityid for waitForEntity?
+
+0x134FB0 Global Script Ptr
+0x134FB4 current map script
+0x134FB8 Trigger address for something
+0x134FC2 requested script?
+0x134FC6 Trigger address2 for something
+
+0x134FD2 setTextboxOrigin posX
+0x134FD4 setTextboxOrigin posY
+0x134FD6 setTextboxOrigin posZ
+0x134FD8 active script
+0x134FDC script sectionPtr
+
+0x134FE0 some value for scripts
+0x134FE4 sectionId
+0x134FE5 some switch case
+0x134FE6 ??, init to 0xFD
+0x134FE7 ??, init to 
+0x134FE8 instructionId
+0x134FE9 ??, init to 0
+0x134FEC ??, init to 0
+
+0x134FF0 ??, init to 0
+0x134FF4 is script paused,
+0x134FF8 mapId
+0x134FFA spawnPoint
+
+0x135006 track id
+0x135007 track variation
+0x135008 switch case, gets reset to 0
+
+0x135010 ?? textbox logic related
+0x135012 ??
+0x135014 ??, new spawn point?
+
+0x135020 is key down?
+0x135024 is key not down?
+0x135028 is X held?
+0x13502C pixel page for characters
+
+0x135078 aiMode
+0x13507C unsets some object if 0
+
+0x135080 ??, init to 0
+0x135084 ??, init to -152
+0x135086 ??, init to -120
+0x135088 ??, init to 0
+0x135089 ??, init to 0
+0x13508A ??, init to 0
+0x13508B ??, init to 0
+0x13508C number of commands?
+0x135094 ??, init to 0
+0x1350BC ??, init to 0
+
+0x1350C0 if 0 run battletickframe
+0x1350C4 ??, init to 0
+0x1350C5 ??, init to 0
+0x1350C6 ??, init to 11
+0x1350C7 ??, init to 0
+0x1350C8 ??, init to 0
+0x1350C9 ??, init to 0
+0x1350CA ??, init to 0
+0x1350CB ??, init to 0
+
+0x1350E0 data start ptr for fireFlattenProjectile, lots of offset data around it
+
+0x13523A curling related
+0x13523C curling related
+0x13523E curling related
+0x135240 curling related
+
+0x135388 ??, init to 1
+0x13538E current hour
+0x13538C current frame
+0x135392 moveNameLength
+0x135398 ??, training related
+0x13539E ??, training related, init to 100
+
+0x135450 pad buttons
+
+0x135464 fillRect related, has lots of offsets
+
+0x1355XX GPU related
+
+0x136DDX clear color related
+0x136DEX clear color related
+
+0x136DFC screen offset posX
+0x136DFE screen offset posY
+
+0x136E00 ??, drawEnv related
+0x136E02 ??, drawEnv related
+0x136E04 ??, drawEnv related
+0x136E06 ??, drawEnv related
+0x136E08 frame count, drawEnv related
+0x136E0C bufferId
+
+0x136E10 ??, drawEnv related
+0x136E12 ??, drawEnv related
+0x136E14 ??, drawEnv related
+0x136E16 ??, drawEnv related
+0x136E18 texture window X
+0x136E1A texture window Y
+
+0x136E6C dispEnv area offset X
+0x136E6E dispEnv area offset Y
+
+0x136E7D clear color related
+
+0x136E8X ??, clearcolor or drawenv related
+
+0x136F10 clear color related
+0x136F14 clear color related
+
+0x136F84 Transform Matrix
+
+0x136FE4 related to battletickframe
+
+0x137140 npc model component struct, offset 0x1C, range 0~4
+0x1371E0 player model component struct
+0x1371FC partner model component struct
+
+0x137218 unknown model component struct, offset 0x1C by digimonType
+
+0x137418 objectId
+0x13741A instanceId
+0x13741C funcPtr1
+0x137420 funcPtr2
+
+0x137A18 objectId, for loop end condition for unset object
+0x137A1A instanceId, for loop end condition for unset object
+
+0x137A24 ??
+
+0x138460 condition flags, 
+	0x01 sleepy, 
+	0x02 tired, 
+	0x04 hungry, 
+	0x08 has to poop, 
+	0x10 unhappy?, 
+	0x20 injured, 
+	0x40 sick
+0x138464 next sleepy hour
+0x138466 next sleepy Minute
+0x138468 next wakeup hour
+0x13846A next wakeup minute
+0x13846C standard awake time
+0x13846E standard Sleep Time
+
+0x138470 awake time this day
+0x138472 insomnia/sickness counter
+0x138474 missed sleep hours counter
+0x138476 tiredness sleep timer
+0x138478 poop timer/level?
+0x13847E virus bar?
+
+0x138482 tiredness
+0x138484 ??, above 6 ticks up tiredness
+0x138486 tiredness hunger
+0x138488 discipline
+0x13848A partner happiness, under 80 removes penalty from lifetime
+
+0x138490 getting sick count
+0x138492 sicknessTries
+0x138494 area effect timer,
+0x138496 sickness timer
+0x138498 injured timer
+0x13849A hungerTime
+0x13849C energyLevel
+0x13849E hungry timer
+
+0x1384A0 starvation timer
+0x1384A2 partner weight
+0x1384A6 exhaustion timer?
+0x1384A8 lifetime, ticks down to 0
+0x1384AA age
+0x1384AC training boost flag,
+0x1384AE training boost Value
+0x1384B0 training boost timer, ticks down to 0
+0x1384B2 care mistakes
+0x1384B4 number of battles
+0x1384B6 evolution timer
+
+0x1384C6 related to training
+0x1384CE related to training
+
+0x1384D6 hp, unknown for what
+0x1384D8 mp, unknown for what
+0x1384DA offense, unknown for what
+0x1384DC defense, unknown for what
+0x1384DE speed, unknown for what
+0x1384E0 brain, unknown for what
+
+0x1386A0 target pointer struct, data every 4
+
+0x1387XX used for waitForEntityMoveTo
+
+0x13A21X cd directory related
+0x13B81X cd directory related
+0x13C010 cd directory related
+
+0x13C038 waitForMoveObjectTo related
+0x13CB38 targetPosX waitForMoveObjectTo related
+0x13CB44 targetPosY waitForMoveObjectTo related
+0x13CB54 waypoint related
+
+0x13D170 waitForEntityWalkTo related
+
+0x13D3A2 dialog state? else function pointer related
+0x13D3AC function pointer related
+
+=================================================================================================
+
+0x13D474 item id in inventory slot, range 0~inventory size
+0x13D4CE inventory size
+
+0x155430 butterfly ptr, offset by 8, 2 max
+
+0x155560 bubble ptr, offset by 0x18, 3 max
+
+0x155758 enemy digimon offset 0x68 for each entity, 2~9 range
+0x15576C player running animation?
+0x15578D is on screen, offset 0x68 for each entity
+
+0x1557A2 tamer flatten sprite?
+0x1557A8 digimon type
+0x1557AC partner locationPtr
+
+0x1557D6 active animation
+0x1557D7 butterfly?
+0x1557DE partner flatten sprite
+0x1557DF partner flatten sprite timer
+
+0x1557E0 offense
+0x1557E2 defense
+0x1557E4 speed
+0x1557E6 brain
+
+0x1557F0 hp
+0x1557F2 mp
+0x1557F4 current HP
+0x1557F6 current MP
+
+0x155800 move data learned 1, FFFFFFFF BBBBBBBB AAAAAAAA EEEEEEEE
+0x155804 move data learned 2, WWWWWWWW MMMMMMMM LLLLLLLL ________
+
+0x155810 partner name
+0x155824 partner lives
+
+0x155828 entity ptr, offset by 0x68, range 0~7
+^+0x4 location ptr
+0x15585E entity flatten sprite, offset by 0x68, range 0~7
+0x15585F entity flatten sprite timer, offset by 0x68, range 0~7
+0x15588D script id?, offset by 0x68, range 0~7
+
